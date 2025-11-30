@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation with Icons</title>
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logo-icon" src="logo.png" alt="logo">
+            <span class="logo-text">Montsi portfolio</span>
+        </div>
+        <button class="mobile-toggle" id="mobileToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+    </header>
+    <div class="tagline">
+        <i class="fas fa-star"></i>
+        <span id="typed" aria-live="polite"></span>
+    </div>
+    <div class="carousel-wrap">
+        <div class="carousel">
+            <div class="controls">
+                <button class="btn prev">‹</button>
+                <button class="btn next">›</button>
+            </div>
+            <div class="viewport" style="overflow:hidden">
+                <div class="track" id="track">
+                    <article class="card">
+                        <div class="media"
+                            style="background-image: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+                        </div>
+                        <div class="card-1">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fab fa-html5"></i>
+                                </div>
+                                <div class="card-badge">Completed</div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="card-title">E-Commerce Platform</h2>
+                                <div class="tech-stack">
+                                    <span class="tech-item">JavaScript</span>
+                                    <span class="tech-item">Node.js</span>
+                                    <span class="tech-item">SQLite</span>
+                                    <span class="tech-item">Rest API</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-links">
+                                    <a href="https://github.com/Montsi0721/clothingStore" class="card-link">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="https://clothingstore-eb15.onrender.com" class="card-link">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                </div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <div class="stat-value">4k</div>
+                                        <div class="stat-label">Lines</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-value">2</div>
+                                        <div class="stat-label">Months</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="media"
+                            style="background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')">
+                        </div>
+                        <div class="card-2">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fab fa-react"></i>
+                                </div>
+                                <div class="card-badge">In Progress</div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="card-title">Task Management App</h2>
+                                <div class="tech-stack">
+                                    <span class="tech-item">React</span>
+                                    <span class="tech-item">Firebase</span>
+                                    <span class="tech-item">Material UI</span>
+                                    <span class="tech-item">Chart.js</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-links">
+                                    <a href="#" class="card-link">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="#" class="card-link">
+                                        <i class="fas fa-external-link-alt"></i> Preview
+                                    </a>
+                                </div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <div class="stat-value">85%</div>
+                                        <div class="stat-label">Complete</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-value">3</div>
+                                        <div class="stat-label">Contributors</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="media"
+                            style="background-image: url('https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1365&q=80')">
+                        </div>
+                        <div class="card-3">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fab fa-vuejs"></i>
+                                </div>
+                                <div class="card-badge">Completed</div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="card-title">Weather Dashboard</h2>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Vue.js</span>
+                                    <span class="tech-item">OpenWeather API</span>
+                                    <span class="tech-item">Chart.js</span>
+                                    <span class="tech-item">Leaflet Maps</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-links">
+                                    <a href="#" class="card-link">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="#" class="card-link">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                </div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <div class="stat-value">5.2k</div>
+                                        <div class="stat-label">Lines</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-value">2</div>
+                                        <div class="stat-label">Months</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="media"
+                            style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')">
+                        </div>
+                        <div class="card-4">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fab fa-js-square"></i>
+                                </div>
+                                <div class="card-badge">Completed</div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="card-title">Code Snippet Manager</h2>
+                                <div class="tech-stack">
+                                    <span class="tech-item">JavaScript</span>
+                                    <span class="tech-item">Express.js</span>
+                                    <span class="tech-item">SQLite</span>
+                                    <span class="tech-item">Prism.js</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-links">
+                                    <a href="#" class="card-link">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="#" class="card-link">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                </div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <div class="stat-value">8.7k</div>
+                                        <div class="stat-label">Lines</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-value">3</div>
+                                        <div class="stat-label">Months</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="media"
+                            style="background-image: url('https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80')">
+                        </div>
+                        <div class="card-5">
+                            <div class="card-header">
+                                <div class="card-icon">
+                                    <i class="fab fa-node-js"></i>
+                                </div>
+                                <div class="card-badge">Planning</div>
+                            </div>
+                            <div class="card-content">
+                                <h2 class="card-title">API Gateway Service</h2>
+                                <div class="tech-stack">
+                                    <span class="tech-item">Node.js</span>
+                                    <span class="tech-item">Redis</span>
+                                    <span class="tech-item">Docker</span>
+                                    <span class="tech-item">Kubernetes</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="card-links">
+                                    <a href="#" class="card-link">
+                                        <i class="fab fa-github"></i> Design Docs
+                                    </a>
+                                    <a href="#" class="card-link">
+                                        <i class="fas fa-tasks"></i> Roadmap
+                                    </a>
+                                </div>
+                                <div class="card-stats">
+                                    <div class="stat">
+                                        <div class="stat-value">0%</div>
+                                        <div class="stat-label">Complete</div>
+                                    </div>
+                                    <div class="stat">
+                                        <div class="stat-value">6</div>
+                                        <div class="stat-label">Months Est.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="dots" id="dots"></div>
+        </div>
+    </div>
+    <script src="footer.js"></script>
+    <script>
+        (function () {
+            const track = document.getElementById('track');
+            const cards = [...track.children];
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
+            const dotsWrap = document.getElementById('dots');
+
+            let idx = 0;
+            let isDragging = false, startX = 0, prevTranslate = 0;
+
+            function layout() { goTo(idx); highlight(); updateDots(); }
+
+            function createDots() {
+                dotsWrap.innerHTML = '';
+                cards.forEach((_, i) => {
+                    const d = document.createElement('button');
+                    d.className = 'dot';
+                    d.onclick = () => goTo(i);
+                    dotsWrap.appendChild(d);
+                });
+            }
+
+            function updateDots() {
+                [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === idx));
+            }
+
+            function goTo(i) {
+                idx = Math.max(0, Math.min(i, cards.length - 1));
+                const card = cards[idx];
+                const vp = track.parentElement.getBoundingClientRect();
+                const offset = (vp.width - card.offsetWidth) / 2;
+                const tx = -(card.offsetLeft) + offset;
+                track.style.transform = `translateX(${tx}px)`;
+                highlight();
+                updateDots();
+            }
+
+            function nextSlide() { goTo(idx + 1); }
+            function prevSlide() { goTo(idx - 1); }
+
+            next.onclick = nextSlide;
+            prev.onclick = prevSlide;
+
+            window.addEventListener('keydown', e => {
+                if (e.key === 'ArrowRight') nextSlide();
+                if (e.key === 'ArrowLeft') prevSlide();
+            });
+
+            // drag + swipe
+            track.addEventListener('pointerdown', e => {
+                isDragging = true; startX = e.clientX;
+                prevTranslate = getTranslate();
+                track.style.transition = 'none';
+                track.setPointerCapture(e.pointerId);
+            });
+
+            window.addEventListener('pointermove', e => {
+                if (!isDragging) return;
+                const dx = e.clientX - startX;
+                track.style.transform = `translateX(${prevTranslate + dx}px)`;
+            });
+
+            window.addEventListener('pointerup', e => {
+                if (!isDragging) return;
+                isDragging = false;
+                const dx = e.clientX - startX;
+                if (Math.abs(dx) > 50) { if (dx < 0) nextSlide(); else prevSlide(); }
+                track.style.transition = '';
+                layout();
+            });
+
+            function getTranslate() {
+                const m = new WebKitCSSMatrix(getComputedStyle(track).transform);
+                return m.m41;
+            }
+
+            function highlight() {
+                const vp = track.parentElement.getBoundingClientRect();
+                const center = vp.left + vp.width / 2;
+                cards.forEach(c => {
+                    const r = c.getBoundingClientRect();
+                    const d = Math.abs(r.left + r.width / 2 - center);
+                    const s = Math.max(.92, 1 - d / (vp.width * 1.2));
+                    c.style.transform = `scale(${s})`;
+                    c.style.opacity = s < .95 ? .9 : 1;
+                });
+            }
+
+            createDots();
+            setTimeout(layout, 20);
+        })();
+    </script>
+    <script>
+        const words = ['Web Developer', 'Creative Designer', 'Digital Creator'];
+        const TYPING_SPEED = 80;
+        const DELETING_SPEED = 40;
+        const PAUSE_AFTER_TYPING = 1400;
+        const PAUSE_AFTER_DELETING = 250;
+        const el = document.getElementById('typed');
+        let wordIndex = 0, charIndex = 0, typing = true;
+
+        function tick() {
+            const current = words[wordIndex];
+            if (typing) {
+                charIndex++;
+                el.textContent = current.slice(0, charIndex);
+                if (charIndex >= current.length) {
+                    typing = false;
+                    setTimeout(tick, PAUSE_AFTER_TYPING);
+                    return;
+                }
+                setTimeout(tick, TYPING_SPEED);
+            } else {
+                charIndex--;
+                el.textContent = current.slice(0, charIndex);
+                if (charIndex <= 0) {
+                    typing = true;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(tick, PAUSE_AFTER_DELETING);
+                    return;
+                }
+                setTimeout(tick, DELETING_SPEED);
+            }
+        }
+        setTimeout(tick, 400);
+    </script>
+</body>
+
+</html>
