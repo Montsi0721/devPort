@@ -328,3 +328,109 @@ header {
 .stat-label {
     font-size: 0.8rem;
 }
+
+@media (max-width: 768px) {
+
+    :root {
+        --card-width: 80vw;
+        --card-media-height: 120px;
+    }
+
+    body {
+        padding: 12px;
+    }
+
+    .carousel-wrap {
+        height: auto;
+        margin-top: 1rem;
+    }
+
+    .track {
+        gap: 14px;
+        padding-bottom: 20px;
+    }
+
+    .card {
+        max-width: var(--card-width);
+        padding: var(--spacing-md);
+        border-radius: var(--radius-lg);
+    }
+
+    .media {
+        height: var(--card-media-height);
+        font-size: 22px;
+    }
+
+    .card-title {
+        font-size: 1.4rem;
+    }
+
+    .card-icon {
+        width: 52px;
+        height: 52px;
+        font-size: 28px;
+    }
+
+    .card-footer {
+        flex-direction: column;
+        gap: 14px;
+        align-items: flex-start;
+    }
+
+    .card-links {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .card-link {
+        flex: 1;
+        justify-content: center;
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+
+    .card-stats {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Kill aggressive scaling on mobile */
+    .card {
+        transform: scale(1) !important;
+        opacity: 1 !important;
+    }
+
+    /* Controls closer & usable */
+    .btn {
+        transform: translateY(450%);
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+
+    header {
+        padding: var(--spacing-md) 0;
+    }
+
+    .tagline {
+        margin-top: 5.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+
+    :root {
+        --card-width: 80vw;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+    }
+
+    .tech-item {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+}
