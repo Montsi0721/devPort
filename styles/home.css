@@ -8,6 +8,7 @@ header {
     padding: var(--spacing-xl) 0;
     border-bottom: rgba(0, 96, 113, 0.16) 2px solid;
     backdrop-filter: blur(10px);
+    z-index: 20;
 }
 
 .logo {
@@ -329,7 +330,7 @@ header {
 
     body {
         padding: 12px;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
 
     .carousel-wrap {
