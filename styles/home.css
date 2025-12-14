@@ -80,15 +80,6 @@ header {
     }
 }
 
-.mobile-toggle {
-    background: none;
-    border: none;
-    color: var(--color-gray-dark);
-    font-size: var(--spacing-lg);
-    cursor: pointer;
-    z-index: 1001;
-}
-
 .tagline {
     position: static;
     margin-top: 7rem;
