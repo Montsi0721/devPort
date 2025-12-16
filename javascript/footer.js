@@ -1,7 +1,7 @@
 const footer = document.createElement('footer');
 footer.innerHTML = `<footer>
                         <nav>
-                            <a href="home.html">
+                            <a href="index.html">
                                 <button>
                                     <i class="fas fa-home icon"></i>
                                     <span class="tooltip">Home</span>
@@ -19,7 +19,8 @@ footer.innerHTML = `<footer>
                                     <span class="tooltip">About</span>
                                 </button>
                             </a>
-                            <a href="contact.html">
+                            <a href="contact.html
+                            ">
                                 <button>
                                     <i class="fas fa-envelope icon"></i>
                                     <span class="tooltip">Contact</span>

@@ -6,13 +6,13 @@
     <title>Projects</title>
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/home.css">
-    <link rel="icon" type="image/x-icon" href="logo.png">
+    <link rel="icon" type="image/x-icon" href="assets/logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img class="logo-icon" src="logo.png" alt="logo">
+            <img class="logo-icon" src="assets/logo.png" alt="logo">
             <span class="logo-text">Montsi portfolio</span>
         </div>
     </header>
@@ -30,7 +30,7 @@
                 <div class="track" id="track">
                     <article class="card">
                         <div class="media"
-                            style="background-image: url('clothing.jpg')">
+                            style="background-image: url('assets/shopScreen.jpeg')">
                         </div>
                         <div class="card-1">
                             <div class="card-header">
@@ -72,30 +72,29 @@
                     </article>
                     <article class="card">
                         <div class="media"
-                            style="background-image: url('https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80')">
+                            style="background-image: url('assets/menu.jpeg'); background-size: cover;">
                         </div>
                         <div class="card-2">
                             <div class="card-header">
                                 <div class="card-icon">
-                                    <i class="fab fa-react"></i>
+                                    <i class="fab fa-php"></i>
                                 </div>
                                 <div class="card-badge">In Progress</div>
                             </div>
                             <div class="card-content">
-                                <h2 class="card-title">Task Management App</h2>
+                                <h2 class="card-title">Restaurant Website</h2>
                                 <div class="tech-stack">
-                                    <span class="tech-item">React</span>
-                                    <span class="tech-item">Firebase</span>
-                                    <span class="tech-item">Material UI</span>
-                                    <span class="tech-item">Chart.js</span>
+                                    <span class="tech-item">JavaScript</span>
+                                    <span class="tech-item">PHP</span>
+                                    <span class="tech-item">SQL</span>
                                 </div>
                             </div>
                             <div class="card-footer">
                                 <div class="card-links">
-                                    <a href="#" class="card-link">
+                                    <a href="https://github.com/Montsi0721/sizzlebar" class="card-link">
                                         <i class="fab fa-github"></i> Code
                                     </a>
-                                    <a href="#" class="card-link">
+                                    <a href="https://sizzle-bar.onrender.com" class="card-link">
                                         <i class="fas fa-external-link-alt"></i> Preview
                                     </a>
                                 </div>
@@ -243,134 +242,7 @@
             <div class="dots" id="dots"></div>
         </div>
     </div>
-    <script src="footer.js"></script>
-    <script>
-        (function () {
-            const track = document.getElementById('track');
-            const cards = [...track.children];
-            const prev = document.querySelector('.prev');
-            const next = document.querySelector('.next');
-            const dotsWrap = document.getElementById('dots');
-
-            let idx = 0;
-            let isDragging = false, startX = 0, prevTranslate = 0;
-
-            function layout() { goTo(idx); highlight(); updateDots(); }
-
-            function createDots() {
-                dotsWrap.innerHTML = '';
-                cards.forEach((_, i) => {
-                    const d = document.createElement('button');
-                    d.className = 'dot';
-                    d.onclick = () => goTo(i);
-                    dotsWrap.appendChild(d);
-                });
-            }
-
-            function updateDots() {
-                [...dotsWrap.children].forEach((d, i) => d.classList.toggle('active', i === idx));
-            }
-
-            function goTo(i) {
-                idx = Math.max(0, Math.min(i, cards.length - 1));
-                const card = cards[idx];
-                const vp = track.parentElement.getBoundingClientRect();
-                const offset = (vp.width - card.offsetWidth) / 2;
-                const tx = -(card.offsetLeft) + offset;
-                track.style.transform = `translateX(${tx}px)`;
-                highlight();
-                updateDots();
-            }
-
-            function nextSlide() { goTo(idx + 1); }
-            function prevSlide() { goTo(idx - 1); }
-
-            next.onclick = nextSlide;
-            prev.onclick = prevSlide;
-
-            window.addEventListener('keydown', e => {
-                if (e.key === 'ArrowRight') nextSlide();
-                if (e.key === 'ArrowLeft') prevSlide();
-            });
-
-            // drag + swipe
-            track.addEventListener('pointerdown', e => {
-                isDragging = true; startX = e.clientX;
-                prevTranslate = getTranslate();
-                track.style.transition = 'none';
-                track.setPointerCapture(e.pointerId);
-            });
-
-            window.addEventListener('pointermove', e => {
-                if (!isDragging) return;
-                const dx = e.clientX - startX;
-                track.style.transform = `translateX(${prevTranslate + dx}px)`;
-            });
-
-            window.addEventListener('pointerup', e => {
-                if (!isDragging) return;
-                isDragging = false;
-                const dx = e.clientX - startX;
-                if (Math.abs(dx) > 50) { if (dx < 0) nextSlide(); else prevSlide(); }
-                track.style.transition = '';
-                layout();
-            });
-
-            function getTranslate() {
-                const m = new WebKitCSSMatrix(getComputedStyle(track).transform);
-                return m.m41;
-            }
-
-            function highlight() {
-                const vp = track.parentElement.getBoundingClientRect();
-                const center = vp.left + vp.width / 2;
-                cards.forEach(c => {
-                    const r = c.getBoundingClientRect();
-                    const d = Math.abs(r.left + r.width / 2 - center);
-                    const s = Math.max(.92, 1 - d / (vp.width * 1.2));
-                    c.style.transform = `scale(${s})`;
-                    c.style.opacity = s < .95 ? .9 : 1;
-                });
-            }
-
-            createDots();
-            setTimeout(layout, 20);
-        })();
-    </script>
-    <script>
-        const words = ['Web Developer', 'Creative Designer', 'Digital Creator'];
-        const TYPING_SPEED = 80;
-        const DELETING_SPEED = 40;
-        const PAUSE_AFTER_TYPING = 1400;
-        const PAUSE_AFTER_DELETING = 250;
-        const el = document.getElementById('typed');
-        let wordIndex = 0, charIndex = 0, typing = true;
-
-        function tick() {
-            const current = words[wordIndex];
-            if (typing) {
-                charIndex++;
-                el.textContent = current.slice(0, charIndex);
-                if (charIndex >= current.length) {
-                    typing = false;
-                    setTimeout(tick, PAUSE_AFTER_TYPING);
-                    return;
-                }
-                setTimeout(tick, TYPING_SPEED);
-            } else {
-                charIndex--;
-                el.textContent = current.slice(0, charIndex);
-                if (charIndex <= 0) {
-                    typing = true;
-                    wordIndex = (wordIndex + 1) % words.length;
-                    setTimeout(tick, PAUSE_AFTER_DELETING);
-                    return;
-                }
-                setTimeout(tick, DELETING_SPEED);
-            }
-        }
-        setTimeout(tick, 400);
-    </script>
+    <script src="javascript/footer.js"></script>
+    <script src="javascript/main.js"></script>
 </body>
-
 </html>
