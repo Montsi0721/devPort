@@ -233,14 +233,19 @@
             .then(response => {
                 if (response.ok) {
                     document.getElementById('successMessage').style.display = 'block';
+                    setTimeout(function() {
+                        document.getElementById('successMessage').style.display = 'none';
+                    }, 4000);
                     this.reset();
                 } else {
                     throw new Error('Form submission failed');
                 }
             })
             .catch(error => {
-                // Show error message
                 document.getElementById('errorMessage').style.display = 'block';
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 4000);
                 
                 // Fallback: try regular form submission
                 console.log('AJAX failed, trying regular submission...');
