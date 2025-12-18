@@ -119,19 +119,46 @@
   </div>
 
   <script src="javascript/footer.js"></script>
-  <script>
-    // Animate progress bars on page load
-    document.addEventListener('DOMContentLoaded', function () {
-      const loaders = document.querySelectorAll('.loader');
+<script>
+  // Animate progress bars and percentage counters together
+  document.addEventListener('DOMContentLoaded', function () {
+    const skillItems = document.querySelectorAll('.skill-item');
 
-      loaders.forEach(loader => {
-        const percent = loader.getAttribute('data-percent');
-        setTimeout(() => {
-          loader.style.width = `${percent}%`;
-        }, 300);
-      });
+    skillItems.forEach((item, index) => {
+      const loader = item.querySelector('.loader');
+      const percentElement = item.querySelector('.skill-percentage');
+      const targetPercent = parseInt(percentElement.textContent);
+      
+      // Set initial state
+      percentElement.textContent = '0%';
+      loader.style.width = '0%';
+      
+      // Add delay for staggered animation
+      setTimeout(() => {
+        let currentPercent = 0;
+        const duration = 1500; // 1.5 seconds
+        const increment = targetPercent / (duration / 16); // ~60fps
+        
+        function updateProgress() {
+          currentPercent += increment;
+          
+          if (currentPercent < targetPercent) {
+            const displayPercent = Math.floor(currentPercent);
+            percentElement.textContent = `${displayPercent}%`;
+            loader.style.width = `${currentPercent}%`;
+            requestAnimationFrame(updateProgress);
+          } else {
+            // Final state
+            percentElement.textContent = `${targetPercent}%`;
+            loader.style.width = `${targetPercent}%`;
+          }
+        }
+        
+        updateProgress();
+      }, 300 + (index * 100)); // Stagger each item by 100ms
     });
-  </script>
+  });
+</script>
 </body>
 
 </html>
