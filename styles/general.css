@@ -399,11 +399,6 @@ a:hover button {
         background: rgba(67, 97, 238, 0.08);
     }
 
-    .stat {
-        border: 1px solid rgba(67, 97, 238, 0.1);
-        background: rgba(67, 97, 238, 0.05);
-    }
-
     .left {
         background: linear-gradient(180deg, rgba(0, 0, 0, 0.484), rgb(0, 0, 0));
     }
