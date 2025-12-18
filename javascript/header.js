@@ -40,6 +40,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('click', function(event) {
         if (!event.target.closest('.hamburger-menu') && 
             !event.target.closest('.theme-menu') &&
+            themeMenu.classList.contains('active') ||
+            event.target.closest('.theme-menu') &&
             themeMenu.classList.contains('active')) {
             themeMenu.classList.remove('active');
             const icon = document.querySelector('.hamburger-menu i');
