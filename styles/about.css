@@ -11,11 +11,12 @@
     position: relative;
     width: 100%;
     margin-bottom: 100px;
+    margin-top: 140px;
     max-width: 980px;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-xl);
-    box-shadow: var(--shadow-medium);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);;
     display: grid;
     grid-template-columns: 320px 1fr;
     gap: 28px;
@@ -90,7 +91,7 @@ h1 {
     font-size: 13px;
     margin-top: 4px;
     z-index: 1;
-    font-weight: var(--font-weight-bold);
+    font-weight: 700;
 }
 
 .stats {
@@ -167,7 +168,7 @@ p.lead {
 .skill-tag {
     background: rgba(0, 217, 255, 0.1);
     padding: 0.4rem 0.8rem;
-    border-radius: var(--radius-full);
+    border-radius: 25px;
     font-size: 0.8rem;
     border: 1px solid rgba(0, 217, 255, 0.2);
 }

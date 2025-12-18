@@ -5,8 +5,9 @@ h1 {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    font-weight: var(--font-weight-bold);
-    margin-bottom: var(--spacing-xl);
+    font-weight: 600;
+    margin-top: 140px;
+    margin-bottom: 35px;
 }
 
 .cards-wrapper {
@@ -23,18 +24,17 @@ h1 {
 .card {
     width: 100%;
     max-width: 500px;
-    background: rgba(255, 255, 255, var(--opacity-low));
-    border-radius: var(--radius-xl);
-    padding: var(--spacing-xl);
-    box-shadow: var(--shadow-medium);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 10px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skill-item {
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-md);
+    margin-bottom: 20px;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.03);
-    border-radius: var(--radius-lg);
+    border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.05);
     transition: all 0.3s ease;
     opacity: 0;
@@ -52,19 +52,19 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 10px;
 }
 
 .skill-header h3 {
     margin: 0;
     font-size: 1.2rem;
-    font-weight: var(--font-weight-bold);
+    font-weight: 600;
     color: var(--color-white);
 }
 
 .skill-percentage {
     color: var(--color-accent);
-    font-weight: var(--font-weight-bold);
+    font-weight: 600;
     font-size: 0.9rem;
 }
 
@@ -73,7 +73,7 @@ h1 {
     height: 12px;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: var(--radius-full);
+    border-radius: 25px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -82,7 +82,7 @@ h1 {
 
 .loader {
     background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
-    border-radius: var(--radius-full);
+    border-radius: 25px;
     height: 8px;
     margin: 3px;
     position: relative;
@@ -190,7 +190,7 @@ h1 {
 
 @media (max-width: 768px) {
     .card {
-        padding: var(--spacing-lg);
+        padding: 20px;
     }
 
     h1 {
@@ -200,11 +200,11 @@ h1 {
 
 @media (max-width: 480px) {
     body {
-        padding: var(--spacing-md);
+        padding: 5px;
     }
 
     .card {
-        padding: var(--spacing-md);
+        padding: 5px;
     }
 
     h1 {
