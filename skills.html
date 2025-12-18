@@ -120,42 +120,53 @@
 
   <script src="javascript/footer.js"></script>
 <script>
-  // Animate progress bars and percentage counters together
+  // Animate progress bars and percentage counters on page load
   document.addEventListener('DOMContentLoaded', function () {
-    const skillItems = document.querySelectorAll('.skill-item');
+    const loaders = document.querySelectorAll('.loader');
+    const percentageElements = document.querySelectorAll('.skill-percentage');
 
-    skillItems.forEach((item, index) => {
-      const loader = item.querySelector('.loader');
-      const percentElement = item.querySelector('.skill-percentage');
-      const targetPercent = parseInt(percentElement.textContent);
+    // Function to animate counting up
+    function animateCounter(element, targetPercent, duration = 1500) {
+      const startTime = performance.now();
+      const startValue = 0;
       
-      // Set initial state
-      percentElement.textContent = '0%';
-      loader.style.width = '0%';
-      
-      // Add delay for staggered animation
-      setTimeout(() => {
-        let currentPercent = 0;
-        const duration = 1500; // 1.5 seconds
-        const increment = targetPercent / (duration / 16); // ~60fps
+      function updateCounter(currentTime) {
+        const elapsedTime = currentTime - startTime;
+        const progress = Math.min(elapsedTime / duration, 1);
         
-        function updateProgress() {
-          currentPercent += increment;
-          
-          if (currentPercent < targetPercent) {
-            const displayPercent = Math.floor(currentPercent);
-            percentElement.textContent = `${displayPercent}%`;
-            loader.style.width = `${currentPercent}%`;
-            requestAnimationFrame(updateProgress);
-          } else {
-            // Final state
-            percentElement.textContent = `${targetPercent}%`;
-            loader.style.width = `${targetPercent}%`;
-          }
+        // Easing function for smooth animation
+        const easeOutQuad = t => t * (2 - t);
+        const easedProgress = easeOutQuad(progress);
+        
+        const currentValue = Math.floor(easedProgress * targetPercent);
+        element.textContent = `${currentValue}%`;
+        
+        if (progress < 1) {
+          requestAnimationFrame(updateCounter);
+        } else {
+          element.textContent = `${targetPercent}%`;
         }
-        
-        updateProgress();
-      }, 300 + (index * 100)); // Stagger each item by 100ms
+      }
+      
+      requestAnimationFrame(updateCounter);
+    }
+
+    // Initialize all counters to 0
+    percentageElements.forEach(percentElement => {
+      const currentText = percentElement.textContent;
+      const targetPercent = parseInt(currentText);
+      percentElement.textContent = '0%';
+      
+      // Start counting animation
+      animateCounter(percentElement, targetPercent);
+    });
+
+    // Animate progress bars
+    loaders.forEach(loader => {
+      const percent = loader.getAttribute('data-percent');
+      setTimeout(() => {
+        loader.style.width = `${percent}%`;
+      }, 300);
     });
   });
 </script>
