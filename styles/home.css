@@ -1,6 +1,5 @@
 .tagline {
     position: static;
-    /* margin-top: 3rem; */
     display: inline-flex;
     align-items: center;
     gap: 5px;

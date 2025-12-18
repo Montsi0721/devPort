@@ -114,10 +114,10 @@ h1 {
         transparent 60%
     );
     transform: translateX(-100%);
-    animation: smoothShimmer 2s infinite ease-in-out;
+    animation: shimmer 2s infinite ease-in-out;
 }
 
-@keyframes smoothShimmer {
+@keyframes shimmer {
     0% {
         transform: translateX(-100%);
     }
