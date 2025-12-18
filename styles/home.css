@@ -1,6 +1,6 @@
 .tagline {
     position: static;
-    margin-top: 7rem;
+    /* margin-top: 3rem; */
     display: inline-flex;
     align-items: center;
     gap: 5px;
@@ -57,6 +57,7 @@
 .controls {
     position: absolute;
     inset: 0 12px auto 12px;
+    top: 15%;
     height: 0;
     pointer-events: none;
     z-index: 10;
@@ -68,7 +69,6 @@
     align-items: center;
     justify-content: center;
     color: var(--color-white);
-    transform: translateY(700%);
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
@@ -77,7 +77,7 @@
     width: 44px;
     height: 44px;
     backdrop-filter: blur(6px);
-    font-size: 2rem;
+    font-weight: 900;
 }
 
 .btn:hover {
@@ -97,6 +97,7 @@
 .dots {
     display: flex;
     gap: 8px;
+    margin-bottom: 50px;
     justify-content: center;
 }
 
@@ -115,7 +116,7 @@
 }
 
 .card-1 .card-icon {
-    color: #e3fc26;
+    color: #fcc626;
     background: rgba(227, 76, 38, .1);
 }
 
@@ -255,6 +256,7 @@
     }
 
     .card {
+        min-width: unset;
         max-width: 260px;
         padding: 1rem;
         border-radius: 10px;
@@ -324,11 +326,6 @@
 
 /* Extra small phones */
 @media (max-width: 420px) {
-
-    :root {
-        --card-width: 80vw;
-    }
-
     .card-title {
         font-size: 1.25rem;
     }
