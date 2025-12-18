@@ -4,6 +4,8 @@
     align-items: center;
     gap: 5px;
     padding: 0 10px;
+    margin-top: 120px;
+    margin-bottom: 20px;
     min-height: 3rem;
     background: rgba(0, 217, 255, .2);
     border-radius: 25px;
@@ -58,6 +60,8 @@
     inset: 0 12px auto 12px;
     top: 15%;
     height: 0;
+    max-width: 1220px;
+    margin: 0 auto;
     pointer-events: none;
     z-index: 10;
 }
@@ -236,6 +240,12 @@
 
 .stat-label {
     font-size: 0.8rem;
+}
+
+@media (min-width: 768px) {
+    .btn {
+        transform: translateY(450%);
+    }
 }
 
 @media (max-width: 768px) {
